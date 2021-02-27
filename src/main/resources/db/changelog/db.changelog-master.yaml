@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: revanth
+      dbms: h2
+      labels: creation
+      changes:
+        - sqlFile:
+            path: create-table.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: 2
+      author: revanth
+      dbms: h2
+      labels: hydration
+      changes:
+        - sqlFile:
+            path: data-hydration.sql
+            relativeToChangelogFile: true

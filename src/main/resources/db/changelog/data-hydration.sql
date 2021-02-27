@@ -1,0 +1,3 @@
+insert into trade_store (id, trade_id, version, counter_party_id, book_id, maturity_date, created_date, expired) values (nextval('hibernate_sequence'), 'T1', 1, 'CP-1', 'B1', TO_DATE('20-05-2020','dd-MM-yyyy'), TO_DATE('27-02-2021','dd-MM-yyyy'), 'N');
+insert into trade_store (id, trade_id, version, counter_party_id, book_id, maturity_date, created_date, expired) values (nextval('hibernate_sequence'), 'T2', 2, 'CP-2', 'B1', TO_DATE('20-05-2021','dd-MM-yyyy'), TO_DATE('27-02-2021','dd-MM-yyyy'), 'N');
+insert into trade_store (id, trade_id, version, counter_party_id, book_id, maturity_date, created_date, expired) values (nextval('hibernate_sequence'), 'T3', 3, 'CP-3', 'B2', TO_DATE('20-05-2014','dd-MM-yyyy'), TO_DATE('27-02-2021','dd-MM-yyyy'), 'N');
