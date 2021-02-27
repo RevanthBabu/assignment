@@ -17,14 +17,15 @@ public class AutomateExpiryUpdationConfiguration {
     @Autowired
     TradeService tradeService;
 
-    @Scheduled(cron = "0 * * * * *")
+    @Scheduled(cron = "1 0 0 * * *")
     public void scheduleAutomaticExpiryUpdation() {
         List<Trade> trades = tradeService.findAll();
         trades.forEach(t ->
         {
-            if (t.getMaturityDate().isBefore(LocalDate.now())) {
+            if (t.getMaturityDate().isBefore(LocalDate.now()) && t.getExpired().equals("N")) {
                 t.setExpired("Y");
                 tradeService.save(t);
+                System.out.println("trade being updated :: " + t);
             }
         }
         );
