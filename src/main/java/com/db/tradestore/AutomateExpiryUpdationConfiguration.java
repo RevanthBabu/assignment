@@ -17,7 +17,9 @@ public class AutomateExpiryUpdationConfiguration {
     @Autowired
     TradeService tradeService;
 
-    @Scheduled(cron = "1 0 0 * * *")
+    /*its ok to run the scheduler once at the start of the day but as test cases cannot wait for that long,
+    we had to schedule it to run every minute*/
+    @Scheduled(cron = "1 * * * * *")
     public void scheduleAutomaticExpiryUpdation() {
         List<Trade> trades = tradeService.findAll();
         trades.forEach(t ->
